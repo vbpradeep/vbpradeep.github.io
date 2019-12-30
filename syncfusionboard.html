@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Essential Studio for JavaScript : Remote Binding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link href="https://cdn.syncfusion.com/17.3.0.14/js/web/flat-azure/ej.web.all.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="https://cdn.syncfusion.com/js/assets/external/jquery-1.10.2.min.js"></script> 
+     <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="https://cdn.syncfusion.com/js/assets/external/jquery-3.0.0.min.js"></script>
+    <!--<![endif]-->
+    <script src="https://cdn.syncfusion.com/js/assets/external/jquery.easing.1.3.min.js"></script>
+
+    <script src="https://cdn.syncfusion.com/js/assets/external/jsrender.min.js"></script>
+    <script src="https://cdn.syncfusion.com/js/assets/external/jquery.validate.min.js"></script>
+    <script src="https://cdn.syncfusion.com/js/assets/external/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.syncfusion.com/17.3.0.14/js/web/ej.web.all.js"></script>
+
+</head>
+<style>
+    #navpane_listbox img.e-list-img {
+        padding-right: 10px;
+    }
+
+    .drawericon:before {
+        content: "\e76b";
+        font-size: 28px;
+        height: 26px;
+    }
+
+    .drawericon {
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 32px;
+        width: 32px;
+        background-size: 100% 100%;
+        padding-right: 10px;
+    }
+
+    .e-header {
+      margin: 15px 0;
+      display: flex;
+    }
+</style>
+
+<body>
+    <div class="content-container-fluid">
+        <div class="row">
+            <div class="e-header" >
+                <div id="butdrawer" class="drawericon e-icon">
+                </div>
+                <h2 id="headerId" style="margin:0">2019Dec2_SyncfusionHelpDesk
+                </h2>
+            </div>
+            <div id="content_container"></div>
+            <div id="Kanban"></div>
+            <div id="navpane">
+                <ul>
+                    <li data-ej-imageurl="https://jsplayground.syncfusion.com/17.3.0.14/themes/web/content/images/navigationdrawer/people.png"
+                        data-ej-text="2019Dec2_SyncfusionHelpDesk" data-ej-href="#Kanban" id="navkanban"></li>
+                        <li data-ej-imageurl="https://jsplayground.syncfusion.com/17.3.0.14/themes/web/content/images/navigationdrawer/people.png"
+                        data-ej-text="2019Dec2_Website" id="navkanban"></li>
+                        <li data-ej-imageurl="https://jsplayground.syncfusion.com/17.3.0.14/themes/web/content/images/navigationdrawer/people.png"
+                        data-ej-text="2019Dec2_EJ2Grid_Hari" id="navkanban"></li>
+                        <li data-ej-imageurl="https://jsplayground.syncfusion.com/17.3.0.14/themes/web/content/images/navigationdrawer/people.png"
+                        data-ej-text="2019Dec2_FlutterChart_J"  id="navkanban"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        ej.WebApiAdaptor.prototype.processResponse = function (data, { }, query, xhr, request) {
+            return { result: data.issues };
+        }
+
+        function headChange(text) {
+            document.getElementById('headerId').innerText = text;
+            var dataManger = ej.DataManager({
+            url: `${<jira-domain>}/rest/api/2/search?jql=sprint%20%3D%20%22${text}%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
+            crossDomain: true,
+            adaptor: new ej.WebApiAdaptor(),
+            headers: [
+                { 'Authorization': 'Basic <jiraemailid:token | base64>' },
+                { 'Access-Control-Allow-Origin': '*' },
+                { 'Content-Type': 'application/json' },
+                { 'X-Atlassian-Token': 'nocheck' },
+                { 'Content-Type': 'application/json' }
+            ]
+        });
+          $("#Kanban").ejKanban({ dataSource: dataManger });
+        }
+
+        var dataManger = ej.DataManager({
+            url: `${<jira-domain>}/rest/api/2/search?jql=sprint%20%3D%20%222019Dec2_SyncfusionHelpDesk%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
+            crossDomain: true,
+            adaptor: new ej.WebApiAdaptor(),
+            headers: [
+                { 'Authorization': 'Basic <jiraemailid:token | base64>' },
+                { 'Access-Control-Allow-Origin': '*' },
+                { 'Content-Type': 'application/json' },
+                { 'X-Atlassian-Token': 'nocheck' },
+                { 'Content-Type': 'application/json' }
+            ]
+        });
+        $(function () {
+            $("#navpane").ejNavigationDrawer({ targetId: "butdrawer", contentId: "content_container", type: "overlay", direction: "left", enableListView: true, listViewSettings: { width: 300, selectedItemIndex: 0 }, position: "normal" });
+            $("#Kanban").ejKanban(
+                {
+                     dataSource: dataManger,
+                    isResponsive: true,
+                    enableTotalCount: true,
+                    columns: [
+                        { headerText: "Open", key: "Open", allowDrop: false },
+                        { headerText: "Validated", key: "Validated" },
+                        { headerText: "Drafting", key: "Drafting" },
+                        { headerText: "In Progress", key: "In Progress" },
+                        { headerText: "Code Review - Request", key: "Code Review - Request" },
+                        { headerText: "Closed", key: "Closed", allowDrag: false },
+                    ],
+                    keyField: "fields.status.name",
+                    allowTitle: true,
+                    allowDragAndDrop: true,
+                    fields: {
+                        primaryKey: "key",
+                        swimlaneKey: "fields.assignee.displayName",
+                        // swimlaneKey: "fields.issuetype.name",
+                        content: "fields.summary",
+                        imageUrl: "fields.assignee.avatarUrls['48x48']"
+                    },
+                    swimlaneSettings: {
+                        showCount: true
+                    },
+                    selectionType: "multiple",
+                    allowKeyboardNavigation: true,
+                    allowSelection: true
+                });
+                var listView = $("#navpane_listview").data("ejListView");
+                document.getElementById('navpane_listview').addEventListener('click', function(e){
+                    var text = e.target;
+                    if (!e.target.classList.contains('e-text')) {
+                    text = e.target.querySelector('.e-text');
+                  }
+                  headChange(text.innerText);
+                });
+        });
+
+    </script>
+</body>
+
+</html>
