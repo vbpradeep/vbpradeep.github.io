@@ -60,7 +60,7 @@
             <div id="navpane">
                 <ul>
                     <li data-ej-imageurl="https://jsplayground.syncfusion.com/17.3.0.14/themes/web/content/images/navigationdrawer/people.png"
-                        data-ej-text="2019Dec2_SyncfusionHelpDesk" data-ej-href="#Kanban" id="navkanban"></li>
+                        data-ej-text="2019Dec2_SyncfusionHelpDesk" id="navkanban"></li>
                         <li data-ej-imageurl="https://jsplayground.syncfusion.com/17.3.0.14/themes/web/content/images/navigationdrawer/people.png"
                         data-ej-text="2019Dec2_Website" id="navkanban"></li>
                         <li data-ej-imageurl="https://jsplayground.syncfusion.com/17.3.0.14/themes/web/content/images/navigationdrawer/people.png"
@@ -79,6 +79,7 @@
 
         function headChange(text) {
             document.getElementById('headerId').innerText = text;
+			$("#Kanban").data('ejKanban').KanbanSwimlane.collapseAll();
             var dataManger = ej.DataManager({
             url: `https://syncfusion.atlassian.net/rest/api/2/search?jql=sprint%20%3D%20%22${text}%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
             crossDomain: true,
@@ -113,6 +114,11 @@
                      dataSource: dataManger,
                     isResponsive: true,
                     enableTotalCount: true,
+					actionComplete: function(e) {
+						if (e.requestType === 'refresh') {
+						$("#Kanban").data('ejKanban').KanbanSwimlane.expandAll();
+						}
+					},
                     columns: [
                         { headerText: "Open", key: "Open", allowDrop: false },
                         { headerText: "Validated", key: "Validated" },
