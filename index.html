@@ -80,11 +80,11 @@
         function headChange(text) {
             document.getElementById('headerId').innerText = text;
             var dataManger = ej.DataManager({
-            url: `${<jira-domain>}/rest/api/2/search?jql=sprint%20%3D%20%22${text}%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
+            url: `https://syncfusion.atlassian.net/rest/api/2/search?jql=sprint%20%3D%20%22${text}%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
             crossDomain: true,
             adaptor: new ej.WebApiAdaptor(),
             headers: [
-                { 'Authorization': 'Basic <jiraemailid:token | base64>' },
+                { 'Authorization': 'Basic cHJhZGVlcGt1bWFyLmJvc2VAc3luY2Z1c2lvbi5jb206R1ZIdG9kVk9kVmR0Rjd1RHFGRm5EMDE2' },
                 { 'Access-Control-Allow-Origin': '*' },
                 { 'Content-Type': 'application/json' },
                 { 'X-Atlassian-Token': 'nocheck' },
@@ -95,11 +95,11 @@
         }
 
         var dataManger = ej.DataManager({
-            url: `${<jira-domain>}/rest/api/2/search?jql=sprint%20%3D%20%222019Dec2_SyncfusionHelpDesk%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
+            url: "https://syncfusion.atlassian.net/rest/api/2/search?jql=sprint%20%3D%20%222019Dec2_SyncfusionHelpDesk%22&fields=key,summary,assignee,reporter,status,priority,issuetype",
             crossDomain: true,
             adaptor: new ej.WebApiAdaptor(),
             headers: [
-                { 'Authorization': 'Basic <jiraemailid:token | base64>' },
+                { 'Authorization': 'Basic cHJhZGVlcGt1bWFyLmJvc2VAc3luY2Z1c2lvbi5jb206R1ZIdG9kVk9kVmR0Rjd1RHFGRm5EMDE2' },
                 { 'Access-Control-Allow-Origin': '*' },
                 { 'Content-Type': 'application/json' },
                 { 'X-Atlassian-Token': 'nocheck' },
