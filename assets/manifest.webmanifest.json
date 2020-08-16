@@ -1,0 +1,23 @@
+{
+    "name": "Pradeep Vasu",
+    "short_name": "Pradeep - instagram - github - twitter",
+    "description": "Pradeep's info",
+    "theme_color": "#fff",
+    "background_color": "white",
+    "display": "standalone",
+    "Scope": "./",
+    "start_url": "/?source=pwa",
+    "splash_pages": null,
+    "icons": [
+      {
+        "src": "/assets/icons/icons-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/assets/icons/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
