@@ -196,6 +196,34 @@
     .-S-tR--ff-downloader ._10vpG--footer ._2KztS--status ._1jiaj--percentage {
       float: right
     }
+
+    .flex {
+      display: flex;
+    }
+
+    .width-30 {
+      width: 30%;
+    }
+
+    .width-40 {
+      width: 40%;
+    }
+
+    .custom-table tr:nth-child(odd) {
+      background-color: #dddddd;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .font-12 {
+      font-size: 12px;
+    }
   </style>
 </head>
 
@@ -350,7 +378,9 @@
       </div>
     </div>
   </section>
-  <!-- <section class="untree_co-section" id="portfolio-section">
+
+
+  <section class="untree_co-section" id="portfolio-section">
     <div class="container">
       <div class="row">
         <div class="section-heading text-center col-md-12 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
@@ -360,83 +390,205 @@
       <div class="filters aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
         <ul>
           <li class="active" data-filter="*">All</li>
-          <li data-filter=".packaging">Packaging</li>
-          <li data-filter=".mockup">Mockup</li>
-          <li data-filter=".typography">Typography</li>
-          <li data-filter=".photography">Photography</li>
+          <li data-filter=".jquery">Jquery UI Widget</li>
+          <!-- <li data-filter=".typescript">Typescript</li>
+          <li data-filter=".sass">SASS Applications</li> -->
         </ul>
       </div>
       <div class="filters-content mb-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
         <div class="row grid" style="position: relative; height: 834.25px;">
-          <div class="single-portfolio col-sm-4 all mockup" style="position: absolute; left: 0%; top: 0px;">
-            <a href="./asserts/work_5.jpg" data-fancybox="gal">
-              <img src="./asserts/work_5.jpg" alt="Image" class="img-fluid">
+          <div class="single-portfolio col-sm-4 all jquery" style="position: absolute; left: 0%; top: 0px;">
+            <a data-fancybox data-animation-duration="700" data-src="#ribbon-hidden-content" href="javascript:;">
+              <img src="./asserts/exp/ribbon/ribbon.png" alt="Ribbon" class="img-fluid">
               <div class="contents">
-                <h3>Card Vol. 3</h3>
-                <div class="cat">Mockup</div>
+                <h3>Ribbon</h3>
+                <div class="cat">Jquery UI Widget</div>
               </div>
             </a>
+            <div id="ribbon-hidden-content" style="display: none;">
+              <div class="flex">
+              <div class="width-30">
+                <a href="./asserts/exp/ribbon/ribbon.png" data-fancybox="ribbon-gal" data-caption="Ribbon">
+                  <img src="./asserts/exp/ribbon/ribbon.png" alt="Image" class="img-fluid">
+                  <div class="caption text-center pt-3 font-12">Click to open expanded view</div>
+                </a>
+
+                <a href="./asserts/exp/ribbon/ribbon_backstage.png" data-fancybox="ribbon-gal" class="hide" data-caption="Ribbon Backstage design">
+                  <img src="./asserts/exp/ribbon/ribbon_backstage.png" alt="Image" class="img-fluid">
+                </a>
+
+                <a href="./asserts/exp/ribbon/ribbon_responsive.png" data-fancybox="ribbon-gal" class="hide" data-caption="Ribbon Responsive design">
+                  <img src="./asserts/exp/ribbon/ribbon_responsive.png" alt="Image" class="img-fluid">
+                </a>
+
+                <a href="./asserts/exp/ribbon/ribbon_responsive1.png" data-fancybox="ribbon-gal" class="hide" data-caption="Ribbon Responsive design">
+                  <img src="./asserts/exp/ribbon/ribbon_responsive1.png" alt="Image" class="img-fluid">
+                </a>
+              </div>
+              <div class="custom-table">
+                <table>
+                  <tr>
+                    <th class="width-40 text-center">
+                      Project
+                    </th>
+                    <th class="">
+                      Jquery UI Widget - Ribbon component
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      Description
+                    </td>
+                    <td>
+                      <p>
+                     The Ribbon control for JavaScript provides with rich customizable user interfaces like Office 2010, SharePoint 2010, and Office Web Apps 2010. 
+                   </p>
+                   <p>
+                     Given Angular wrappers from angular 4 versions, now supports 10
+                   </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      Responsibilities
+                    </td>
+                    <td>
+                      <ul>
+                        <li>
+                          Implemented responsive layout and menu integration features.
+                        </li>
+                        <li>
+                          Managed customer reported complex bugs
+                        </li>
+                        <li>
+                          Implemented workarounds for some of the unsupported features as per the customer’s requirement.
+                        </li>
+                        <li>
+                          Managed memory and performance related bugs.
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-center">
+                      Reference Links
+                    </td>
+                    <td>
+                      <a href="http://js.syncfusion.com/demos/web/#!/bootstrap/ribbon/defaultfunctionalities">
+                        http://js.syncfusion.com/demos/web/#!/bootstrap/ribbon/defaultfunctionalities
+                      </a>
+                      <br>
+                      <a href="https://help.syncfusion.com/api/js/ejribbon">
+                        https://help.syncfusion.com/api/js/ejribbon
+                      </a>
+                    </td>
+                  </tr>
+               </table>
+              </div>
+            </div>
+            </div>
           </div>
-          <div class="single-portfolio col-sm-4 all typography" style="position: absolute; left: 33.3325%; top: 0px;">
-            <a href="./asserts/work_1.jpg" data-fancybox="gal">
-              <img src="./asserts/work_1.jpg" alt="Image" class="img-fluid">
+
+
+          <div class="single-portfolio col-sm-4 all jquery" style="position: absolute; left: 33.3325%; top: 0px;">
+            <a data-fancybox data-animation-duration="700" data-src="#kanban-hidden-content" href="javascript:;">
+              <img src="./asserts/exp/kanban/kanban.png" alt="Kanban Board" class="img-fluid">
               <div class="contents">
-                <h3>House Design</h3>
-                <div class="cat">Typography</div>
+                <h3>Kanban Board</h3>
+                <div class="cat">Jquery UI Widget</div>
               </div>
             </a>
-          </div>
-          <div class="single-portfolio col-sm-4 all mockup" style="position: absolute; left: 66.6649%; top: 0px;">
-            <a href="./asserts/work_2.jpg" data-fancybox="gal">
-              <img src="./asserts/work_2.jpg" alt="Image" class="img-fluid">
-              <div class="contents">
-                <h3>WoW</h3>
-                <div class="cat">Mockup</div>
+
+            <div id="kanban-hidden-content" style="display: none;">
+              <div class="flex">
+              <div class="width-30">
+                <a href="./asserts/exp/kanban/kanban.PNG" data-fancybox="kanban-gal"  data-caption="Kanban Board Drag and Drop support">
+                  <img src="./asserts/exp/kanban/kanban.png" alt="Kanban Board" class="img-fluid">
+                  <div class="caption text-center pt-3 font-12">Click to open expanded view</div>
+                </a>
+
+                <a href="./asserts/exp/kanban/kanban_filter.PNG" data-fancybox="kanban-gal" class="hide" data-caption="Kanban Board Filter support">
+                  <img src="./asserts/exp/kanban/kanban_filter.PNG" alt="Image" class="img-fluid">
+                </a>
+
+                <a href="./asserts/exp/kanban/kanban_context.PNG" data-fancybox="kanban-gal" class="hide" data-caption="Kanban Board Context menu support">
+                  <img src="./asserts/exp/kanban/kanban_context.PNG" alt="Image" class="img-fluid">
+                </a>
+
+                <a href="./asserts/exp/kanban/kanban_responsive.PNG" data-fancybox="kanban-gal" class="hide" data-caption="Kanban Board Responsive design">
+                  <img src="./asserts/exp/kanban/kanban_responsive.PNG" alt="Image" class="img-fluid">
+                </a>
               </div>
-            </a>
-          </div>
-          <div class="single-portfolio col-sm-4 all packaging" style="position: absolute; left: 0%; top: 263.323px;">
-            <a href="./asserts/work_3.jpg" data-fancybox="gal">
-              <img src="./asserts/work_3.jpg" alt="Image" class="img-fluid">
-              <div class="contents">
-                <h3>Seat</h3>
-                <div class="cat">Packaging</div>
+              <div class="custom-table">
+                <table>
+                  <tr>
+                    <th class="width-40 text-center">
+                      Project
+                    </th>
+                    <th class="">
+                      Jquery UI Widget - Kanban component
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      Description
+                    </td>
+                    <td>
+                      <p>
+                        The Kanban control for JavaScript is an efficient way to visualize the workflow at each stage along its path to completion.
+                   </p>
+                   <p>
+                     Given Angular wrappers from angular 4 versions, now supports 10
+                   </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-center">
+                      Responsibilities
+                    </td>
+                    <td>
+                      <ul>
+                        <li>
+                          Implemented workflow, toggle-column, card design, editing, shoe/Hide , stacked header, context Menu features and issues fixes. 
+                        </li>
+                        <li>
+                          Managed customer reported complex bugs
+                        </li>
+                        <li>
+                          Implemented workarounds for some of the unsupported features as per the customer’s requirement.
+                        </li>
+                        <li>
+                          Managed memory and performance related bugs.
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="text-center">
+                      Reference Links
+                    </td>
+                    <td>
+                      <a href="http://js.syncfusion.com/demos/web/#!/bootstrap/kanban/DefaultFunctionalities">
+                        http://js.syncfusion.com/demos/web/#!/bootstrap/kanban/DefaultFunctionalities
+                      </a>
+                      <br>
+                      <a href="https://help.syncfusion.com/api/js/ejkanban">
+                        https://help.syncfusion.com/api/js/ejkanban
+                      </a>
+                    </td>
+                  </tr>
+               </table>
               </div>
-            </a>
+            </div>
+            </div>
           </div>
-          <div class="single-portfolio col-sm-4 all typography" style="position: absolute; left: 0%; top: 526.646px;">
-            <a href="./asserts/work_4.jpg" data-fancybox="gal">
-              <img src="./asserts/work_4.jpg" alt="Image" class="img-fluid">
-              <div class="contents">
-                <h3>Seat</h3>
-                <div class="cat">Packaging</div>
-              </div>
-            </a>
-          </div>
-          <div class="single-portfolio col-sm-4 all photography"
-            style="position: absolute; left: 66.6649%; top: 555.115px;">
-            <a href="./asserts/work_6.webp" data-fancybox="gal">
-              <img src="./asserts/work_6.webp" alt="Image" class="img-fluid">
-              <div class="contents">
-                <h3>House Design</h3>
-                <div class="cat">Photography</div>
-              </div>
-            </a>
-          </div>
-          <div class="single-portfolio col-sm-4 all photography"
-            style="position: absolute; left: 33.3325%; top: 555.156px;">
-            <a href="./asserts/work_7.webp" data-fancybox="gal">
-              <img src="./asserts/work_7.webp" alt="Image" class="img-fluid">
-              <div class="contents">
-                <h3>House Design</h3>
-                <div class="cat">Photography</div>
-              </div>
-            </a>
-          </div>
+
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- <div class="untree_co-section" id="services-section">
     <div class="container">
@@ -501,6 +653,9 @@
       </div>
     </div>
   </div> -->
+
+
+  
   <div class="untree_co-section" id="resume-section">
     <div class="container">
       <div class="row">
